@@ -1,9 +1,6 @@
 package by.rouba.sfgdi;
 
-import by.rouba.sfgdi.controllers.ConstructorInjectedController;
-import by.rouba.sfgdi.controllers.MyController;
-import by.rouba.sfgdi.controllers.PropertyInjectedController;
-import by.rouba.sfgdi.controllers.SetterInjectedController;
+import by.rouba.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +10,9 @@ public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.getGreeting());
 
 		System.out.println("-------- Primary");
 		MyController myController = (MyController) ctx.getBean("myController");
