@@ -1,12 +1,17 @@
 package by.rouba.sfgdi.controllers;
 
+import by.rouba.sfgdi.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
-    public String sayHello() {
-        System.out.println("Hello World!");
+    GreetingService greetingService;
 
-        return "Hey Folks!";
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public String getGreeting() {
+        return greetingService.sayGreeting();
     }
 }
