@@ -1,6 +1,6 @@
 package by.rouba.sfgdi.controllers;
 
-import by.rouba.sfgdi.services.PropertyGreetingImpl;
+import by.rouba.sfgdi.services.PropertyGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class PropertyInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new PropertyInjectedController();
-        controller.greetingService = new PropertyGreetingImpl();
+        controller.greetingService = new PropertyGreetingService();
     }
 
     @Test

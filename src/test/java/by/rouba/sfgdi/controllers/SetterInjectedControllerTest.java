@@ -1,6 +1,6 @@
 package by.rouba.sfgdi.controllers;
 
-import by.rouba.sfgdi.services.SetterGreetingImpl;
+import by.rouba.sfgdi.services.SetterGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new SetterInjectedController();
-        controller.setGreetingService(new SetterGreetingImpl());
+        controller.setGreetingService(new SetterGreetingService());
     }
 
     @Test
